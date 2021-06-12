@@ -1,0 +1,50 @@
+.sampul{
+    width: 75px;
+}
+
+.sampul2 {
+    width: 200px;
+}
+
+.table > tbody > tr > *{
+    vertical-align: middle;
+}
+
+.alert {
+    width: 50%;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.loker{
+    display: inline-block;
+}
+
+.loker1{
+    width: 600px;
+}
+
+.tambah{
+    margin-top: -55px;
+}
+
+/* .tambahData{
+    position:fixed;
+    margin-top: -180px;
+}
+
+.tambahFormulir {
+    position:fixed;
+    margin-top: -290px;
+} */
+
+.cari{
+    width: 350px;
+}
