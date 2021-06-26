@@ -33,18 +33,24 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'User::index');
 
-$routes->get('/calon/pdf', 'Calon::pdf');
-$routes->get('/calon', 'Calon::index', ['filter' => 'role:admin']);
-$routes->get('/calon/(:any)', 'Calon::index', ['filter' => 'role:admin']);
-// $routes->get('/calon/printpdf', 'Calon::printpdf');
+$routes->get('/penjualan/pdf', 'Penjualan::pdf');
+$routes->get('/penjualan', 'Penjualan::index');
+$routes->get('/penjualan/(:any)', 'Penjualan::index', ['filter' => 'role:admin']);
+$routes->delete('/penjualan/(:num)', 'Penjualan::delete/$1');
 
-$routes->get('/loker/create', 'Loker::create');
-$routes->get('/form/(:segment)', 'Loker::form/$1');
-$routes->get('/loker/edit/(:segment)', 'Loker::edit/$1');
-$routes->delete('/loker/(:num)', 'Loker::delete/$1');
-$routes->get('/loker/(:any)', 'Loker::detail/$1');
+$routes->get('/laporan', 'Laporan::index');
+$routes->delete('/laporan/(:num)', 'Laporan::delete/$1');
 
-$routes->delete('/calon/(:num)', 'Calon::delete/$1');
+$routes->get('/order', 'Order::index');
+$routes->get('/cart', 'cart::index');
+$routes->delete('/cart/(:num)', 'Cart::delete/$1');
+
+$routes->get('/sepatu/create', 'Sepatu::create');
+$routes->get('/sepatu/beli/(:segment)', 'Sepatu::beli/$1');
+$routes->get('/sepatu/edit/(:segment)', 'Sepatu::edit/$1');
+$routes->delete('/sepatu/(:num)', 'Sepatu::delete/$1');
+$routes->get('/sepatu/(:any)', 'Sepatu::detail/$1');
+
 
 
 /*

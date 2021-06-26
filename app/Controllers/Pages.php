@@ -7,7 +7,8 @@ class Pages extends BaseController
     public function about()
     {
         $data = [
-            'title' => 'About Me'
+            'title' => 'About Us',
+            'cart' => \Config\Services::cart()
         ];
         return view('pages/about', $data);
     }
@@ -15,19 +16,8 @@ class Pages extends BaseController
     public function contact()
     {
         $data = [
-            'title' => 'Contact Me',
-            'alamat' => [
-                [
-                    'tipe' => 'Rumah',
-                    'alamat' => 'Jl. jdj No. 123',
-                    'kota' => 'Bangkinang'
-                ],
-                [
-                    'tipe' => 'Kos',
-                    'alamat' => 'Jl. jdj No. 123',
-                    'kota' => 'Panam'
-                ]
-            ]
+            'title' => 'Contact Us',
+            'cart' => \Config\Services::cart()
         ];
         return view('pages/contact', $data);
     }

@@ -1,4 +1,85 @@
-.sampul{
+.logo img{
+    width: 50px;
+    transition: 0.8s;
+}
+
+.logo:hover img{
+    transform: rotate(360deg);
+}
+
+.home {
+    position: fixed;
+    margin-top: -23px;
+    height: 546px;
+    background-image: url(/img/bg.jpeg);
+    background-position: center;
+}
+
+.sd img{
+    width: 600px;
+}
+
+.selamat h1{
+    font-size: 50px;
+}
+
+.home h1 {
+    font-weight: bold;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.thome {
+    width: 320px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+}
+
+.thome h5 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 60px;
+    text-align: center;
+}
+
+li{
+    text-align: justify;
+}
+
+p{
+    text-align: justify;
+}
+
+.thome p {
+    text-align: center;
+}
+
+.btnHome {
+    margin-top: 80px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.col-8 {
+    margin: auto;
+}
+
+.dt {
+    margin: auto;
+}
+
+
+/* .tombolD {
+    float: right;
+} */
+
+.col-sm-8{
+    margin-top: 8px;
+}
+
+.sampul {
     width: 75px;
 }
 
@@ -6,45 +87,131 @@
     width: 200px;
 }
 
-.table > tbody > tr > *{
+.table>tbody>tr>* {
     vertical-align: middle;
 }
 
-.alert {
+/* .alert {
     width: 50%;
+} */
+
+a {
+    text-decoration: none;
+    color: black;
 }
+
 
 tr:nth-child(even) {
     background-color: #ddd;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
-.loker{
+.loker {
     display: inline-block;
+
 }
 
-.loker1{
+.loker1 {
     width: 600px;
 }
 
-.tambah{
-    margin-top: -55px;
+.tambah {
+    margin-top: -59px;
 }
 
-/* .tambahData{
-    position:fixed;
-    margin-top: -180px;
-}
-
-.tambahFormulir {
-    position:fixed;
-    margin-top: -290px;
-} */
-
-.cari{
+.cari {
     width: 350px;
 }
+
+.about {
+    margin: 50px auto;
+    padding: 20px;
+    width: 500px;
+    display: inline-block;
+    
+}
+
+.about h1 {
+    text-align: center;
+}
+
+.adminP {
+    float: left;
+}
+
+.adminP img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.adminP ul .img{
+    list-style-type: none;
+}
+
+.adminK {
+    margin-top: 80px;
+    margin-left: 250px;
+}
+
+.admin1 {
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.admin2 {
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.admin3 {
+    border-bottom: 1px solid black;
+}
+
+.clear1 {
+    clear: left;
+}
+
+.rules{
+    color: red;
+}
+
+.note{
+    margin-left: 10px;
+    width: 180px;
+    margin-top: 600px;
+    position: fixed;
+}
+
+.note p{
+    color: white;
+}
+
+.iconC img {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(1);
+    display: block;
+    margin-right: 15px;
+    transition: 0.2s;
+}
+
+.iconC li {
+    display: inline-block;
+}
+
+.iconC ul {
+    text-align: center;
+}
+
+.iconC a:hover img {
+    filter: grayscale(0);
+}
+
+.stokred{
+    color: red;
+    margin-top: -17px;
+}
+
+
+

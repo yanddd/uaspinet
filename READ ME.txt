@@ -1,11 +1,11 @@
 
 -Ekstrak source code					|
--Jika menggunakan xampp simpan folder uaspinet		|
+-Jika menggunakan xampp simpan folder uasprakrpl	|
  ke dalam folder htdocs					|
--Buat database baru dengan nama uaspinet		|
--import file uaspinet.sql ke dalam database yang dibuat |
- tadi							|
--buka cmd/gitbash ketik cd c:/xampp/htdocs/uaspinet	|
+-Buat database baru dengan nama uasprakrpl		|
+-import file uaaprakrpl.sql ke dalam database yang 	|
+ dibuat tadi						|
+-buka cmd/gitbash ketik cd c:/xampp/htdocs/uasprakrpl	|
 -kemudian ketik php spark serve, jgn lupa jalankan xampp|
  terlebih dahulu					|				
 -Buka browser lalu jalankan dengan menuliskan 		|
@@ -13,7 +13,11 @@
 							|
 Akun Admin						|
 user: admin1						|
-pass: uaspinet29					|
+pass: prakrpl29						|
+							|
+Akun Owner						|
+user: owner						|
+pass: prakrpl29					        |
 							|
 Akun user						|
 buat akun baru						|
