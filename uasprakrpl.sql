@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jun 2021 pada 01.16
+-- Waktu pembuatan: 26 Jun 2021 pada 07.22
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 7.4.19
 
@@ -241,7 +241,29 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (121, '::1', 'arif211@gmail.com', 12, '2021-06-18 08:53:35', 1),
 (122, '::1', 'admin1@gmail.com', 8, '2021-06-18 08:54:09', 1),
 (123, '::1', 'yandrizal299@gmail.com', 9, '2021-06-18 18:02:54', 1),
-(124, '::1', 'yandrizal299@gmail.com', 9, '2021-06-18 18:09:27', 1);
+(124, '::1', 'yandrizal299@gmail.com', 9, '2021-06-18 18:09:27', 1),
+(125, '::1', 'yandrizal299@gmail.com', 9, '2021-06-18 23:42:45', 1),
+(126, '::1', 'yandrizal299@gmail.com', 9, '2021-06-18 23:53:11', 1),
+(127, '::1', 'admin1@gmail.com', 8, '2021-06-19 00:08:35', 1),
+(128, '::1', 'admin1', NULL, '2021-06-21 03:58:05', 0),
+(129, '::1', 'admin1@gmail.com', 8, '2021-06-21 03:58:16', 1),
+(130, '::1', 'yandrizal299@gmail.com', 9, '2021-06-21 05:46:53', 1),
+(131, '::1', 'yandrizal299@gmail.com', 9, '2021-06-21 08:03:04', 1),
+(132, '::1', 'admin1@gmail.com', 8, '2021-06-21 08:04:50', 1),
+(133, '::1', 'manajer', NULL, '2021-06-21 09:11:24', 0),
+(134, '::1', 'manajer', NULL, '2021-06-21 09:11:36', 0),
+(135, '::1', 'manajer', NULL, '2021-06-21 09:11:46', 0),
+(136, '::1', 'owner1@gmail.com', 11, '2021-06-21 09:12:16', 1),
+(137, '::1', 'admin1', NULL, '2021-06-21 09:23:03', 0),
+(138, '::1', 'admin1@gmail.com', 8, '2021-06-21 09:23:11', 1),
+(139, '::1', 'admin1@gmail.com', 8, '2021-06-21 10:37:21', 1),
+(140, '::1', 'admin1@gmail.com', 8, '2021-06-22 07:24:41', 1),
+(141, '::1', 'yandrizal299@gmail.com', 9, '2021-06-22 07:39:36', 1),
+(142, '::1', 'admin1@gmail.com', 8, '2021-06-22 08:47:32', 1),
+(143, '::1', 'yandrizal299@gmail.com', 9, '2021-06-22 08:54:40', 1),
+(144, '::1', 'yandrizal299@gmail.com', 9, '2021-06-22 18:36:04', 1),
+(145, '::1', 'yandrizal299@gmail.com', 9, '2021-06-24 22:22:24', 1),
+(146, '::1', 'arif211@gmail.com', 12, '2021-06-24 22:23:46', 1);
 
 -- --------------------------------------------------------
 
@@ -307,6 +329,26 @@ CREATE TABLE `auth_users_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id` int(11) NOT NULL,
+  `laporan` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id`, `laporan`, `created_at`, `updated_at`) VALUES
+(1, 'Data Penjualan_8.pdf', '2021-06-21 09:10:58', '2021-06-21 09:10:58');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `migrations`
 --
 
@@ -338,7 +380,8 @@ CREATE TABLE `penjualan` (
   `username` varchar(255) NOT NULL,
   `nama_pembeli` varchar(255) NOT NULL,
   `alamat_pembeli` varchar(255) NOT NULL,
-  `jumlah_sepatu` int(3) DEFAULT NULL,
+  `id_sepatu` int(11) NOT NULL,
+  `jumlah_sepatu` int(11) DEFAULT NULL,
   `nama_sepatu` varchar(255) NOT NULL,
   `harga_sepatu` int(11) NOT NULL,
   `total` int(11) DEFAULT NULL,
@@ -352,16 +395,22 @@ CREATE TABLE `penjualan` (
 -- Dumping data untuk tabel `penjualan`
 --
 
-INSERT INTO `penjualan` (`id`, `username`, `nama_pembeli`, `alamat_pembeli`, `jumlah_sepatu`, `nama_sepatu`, `harga_sepatu`, `total`, `status_bayar`, `status`, `created_at`, `updated_at`) VALUES
-(10, 'yanddd', 'Yandri', 'Pekanbaru', 3, 'Dallas', 250000, 760000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 04:41:51', '2021-06-18 06:40:19'),
-(11, 'yanddd', 'Yandri', 'Pekanbaru', 2, 'Dallas', 250000, 510000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 05:37:55', '2021-06-18 06:40:27'),
-(12, 'yanddd', 'Arif', 'Pekanbaru', 2, 'Playboy', 500000, 1010000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 05:38:31', '2021-06-18 07:50:28'),
-(13, 'arif211', 'Yandri', 'Pekanbaru', 2, 'Dallas', 250000, 510000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 05:46:55', '2021-06-18 08:48:41'),
-(14, 'yanddd', 'Yandri', 'Air Tiris', 2, 'Adidas', 250000, 515000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 06:41:02', '2021-06-18 06:41:45'),
-(21, 'yanddd', 'Yandri', 'Air Tiris', 2, 'Dallas', 250000, 515000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 08:36:03', '2021-06-18 08:39:03'),
-(22, 'yanddd', 'Yandri', 'Bangkinang', 5, 'Adidas', 250000, 1270000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-18 08:37:14', '2021-06-18 18:04:57'),
-(26, 'arif211', '', '', NULL, 'Playboy', 500000, NULL, 'belum di bayar', 'belum dikonfirmasi', '2021-06-18 08:58:33', '2021-06-18 08:58:33'),
-(27, 'yanddd', 'Yandri', 'Bangkinang', 1, 'League', 1200000, 1220000, 'sudah di bayar', 'belum dikonfirmasi', '2021-06-18 18:03:05', '2021-06-18 18:03:05');
+INSERT INTO `penjualan` (`id`, `username`, `nama_pembeli`, `alamat_pembeli`, `id_sepatu`, `jumlah_sepatu`, `nama_sepatu`, `harga_sepatu`, `total`, `status_bayar`, `status`, `created_at`, `updated_at`) VALUES
+(13, 'yanddd', 'Yandri', 'Panam', 1, 2, 'Nike Sport 2', 250000, 512000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-21 10:26:33', '2021-06-22 07:24:58'),
+(14, 'yanddd', 'Walid', 'Pekanbaru', 1, 2, 'Nike Sport 2', 250000, 510000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-21 10:30:57', '2021-06-22 09:13:57'),
+(18, 'yanddd', 'Arif', 'Air Tiris', 1, 3, 'Nike Sport 2', 250000, 765000, 'sudah di bayar', 'sudah dikonfirmasi', '2021-06-22 09:47:24', '2021-06-22 09:47:55'),
+(19, 'yanddd', '', '', 2, 1, 'Dallas', 100000, NULL, 'belum di bayar', 'belum dikonfirmasi', '2021-06-24 22:22:40', '2021-06-24 22:22:40');
+
+--
+-- Trigger `penjualan`
+--
+DELIMITER $$
+CREATE TRIGGER `penjualan_sepatu` AFTER INSERT ON `penjualan` FOR EACH ROW BEGIN
+	UPDATE sepatu SET jumlah_sepatu=jumlah_sepatu-NEW.jumlah_sepatu
+    WHERE id = NEW.id_sepatu;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -375,6 +424,7 @@ CREATE TABLE `sepatu` (
   `slug` varchar(255) NOT NULL,
   `jenis_sepatu` varchar(255) NOT NULL,
   `harga_sepatu` int(11) NOT NULL,
+  `jumlah_sepatu` int(11) NOT NULL,
   `sampul` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
@@ -384,15 +434,10 @@ CREATE TABLE `sepatu` (
 -- Dumping data untuk tabel `sepatu`
 --
 
-INSERT INTO `sepatu` (`id`, `nama_sepatu`, `slug`, `jenis_sepatu`, `harga_sepatu`, `sampul`, `created_at`, `updated_at`) VALUES
-(17, 'Dallas', 'dallas', 'School', 250000, '1623732782_c62f24149c890c83e67f.jpg', '2021-06-14 23:53:02', '2021-06-14 23:53:02'),
-(18, 'Playboy', 'playboy', 'Sport', 500000, '1623767377_ebd33a4010690b95d2e0.jpg', '2021-06-15 06:12:39', '2021-06-15 09:29:37'),
-(19, 'Converse', 'converse', 'Basic', 100000, '1623767444_8d0f48357f663efac3f7.jpg', '2021-06-15 09:30:44', '2021-06-15 09:30:44'),
-(20, 'Adidas', 'adidas', 'Sport', 250000, '1623767521_8e69b2b53f3ab5a25c87.jpg', '2021-06-15 09:31:36', '2021-06-15 09:32:01'),
-(21, 'Vans', 'vans', 'School', 400000, '1623767565_275c4d8f911114870e55.jpg', '2021-06-15 09:32:45', '2021-06-15 09:32:45'),
-(22, 'League', 'league', 'Sport', 1200000, '1623767679_19b2c16d5bfcab21cc9b.jpg', '2021-06-15 09:34:39', '2021-06-15 09:34:39'),
-(23, 'Piero', 'piero', 'Basic', 60000, '1623767733_e03b58fa2a10cbd947d0.jpg', '2021-06-15 09:35:33', '2021-06-15 09:35:33'),
-(24, 'Dallas Sport', 'dallas-sport', 'Sport', 240000, '1623978428_cb6ad86b772422d129c9.jpg', '2021-06-17 20:07:08', '2021-06-17 20:07:08');
+INSERT INTO `sepatu` (`id`, `nama_sepatu`, `slug`, `jenis_sepatu`, `harga_sepatu`, `jumlah_sepatu`, `sampul`, `created_at`, `updated_at`) VALUES
+(1, 'Nike Sport 2', 'nike-sport-2', 'Sport', 250000, 7, '1624276116_5365702596425332d747.jpg', '2021-06-21 06:48:36', '2021-06-21 10:42:02'),
+(2, 'Dallas', 'dallas', 'Basic', 100000, 40, '1624285435_dbfdf0c5cc32158f8ec7.jpg', '2021-06-21 09:23:55', '2021-06-21 10:31:37'),
+(3, 'Nike School', 'nike-school', 'School', 200000, 0, '1624286276_08137006a5da349352fd.jpg', '2021-06-21 09:37:56', '2021-06-21 09:39:49');
 
 -- --------------------------------------------------------
 
@@ -495,6 +540,12 @@ ALTER TABLE `auth_users_permissions`
   ADD KEY `user_id_permission_id` (`user_id`,`permission_id`);
 
 --
+-- Indeks untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -505,7 +556,10 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `nama_sepatu` (`nama_sepatu`);
+  ADD KEY `nama_sepatu` (`nama_sepatu`),
+  ADD KEY `id_sepatu` (`id_sepatu`),
+  ADD KEY `id_sepatu_2` (`id_sepatu`),
+  ADD KEY `nama_pembeli` (`nama_pembeli`);
 
 --
 -- Indeks untuk tabel `sepatu`
@@ -542,7 +596,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -563,6 +617,12 @@ ALTER TABLE `auth_tokens`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -572,13 +632,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `sepatu`
 --
 ALTER TABLE `sepatu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -616,6 +676,13 @@ ALTER TABLE `auth_tokens`
 ALTER TABLE `auth_users_permissions`
   ADD CONSTRAINT `auth_users_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `auth_users_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `penjualan`
+--
+ALTER TABLE `penjualan`
+  ADD CONSTRAINT `penjualan_ibfk_1` FOREIGN KEY (`id_sepatu`) REFERENCES `sepatu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `penjualan_ibfk_2` FOREIGN KEY (`nama_sepatu`) REFERENCES `sepatu` (`nama_sepatu`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
